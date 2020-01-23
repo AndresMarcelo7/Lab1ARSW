@@ -10,9 +10,15 @@ package edu.eci.arsw.threads;
  * @author hcadavid
  */
 public class CountThreadsMain {
-    
-    public static void main(String a[]){
+
+    public static void main(String a[]) {
+        CountThread primero = new CountThread(0, 99);
+        CountThread segundo = new CountThread(99, 199);
+        CountThread tercero = new CountThread(200, 299);
+        new Thread(primero).start();
+        new Thread(segundo).start();
+        new Thread(tercero).start();
         
     }
-    
+
 }
