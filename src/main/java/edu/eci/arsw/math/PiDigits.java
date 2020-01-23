@@ -1,5 +1,8 @@
 package edu.eci.arsw.math;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
 ///  <summary>
 ///  An implementation of the Bailey-Borwein-Plouffe formula for calculating hexadecimal
 ///  digits of pi.
@@ -50,14 +53,40 @@ public class PiDigits {
      public static byte[] getDigits(int start, int count, int N){
         int saltos = Math.floorDiv(count,N);
         int sobrante = count % N;
+        byte[] ans = new byte[N];
+        DigitsThread[] threads = new DigitsThread[N];
         int aux = start;
-        int aux2 = saltos;
         for (int i =0; i<N ; i++){
-            new Thread(new DigitsThread(aux,aux2)).start();
-            aux += saltos+1;
-            aux2 += (i==N-1) ? (saltos+sobrante): saltos;
+            if (i == N-1){
+               threads[i] = new DigitsThread(aux,saltos+sobrante);
+            }
+            else{
+                threads[i] = new DigitsThread(aux,saltos);
+
+            }
+            threads[i].start();
+            aux+=saltos;
         }
+
         
+        for (int i=0; i<N; i++) {
+            try {
+                threads[i].join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream( );
+        for (DigitsThread t : threads){
+            try {
+                outputStream.write(t.getRta());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        ans = outputStream.toByteArray( );
+        return ans;
      }
      
 

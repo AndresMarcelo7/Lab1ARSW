@@ -9,14 +9,15 @@ package edu.eci.arsw.math;
  *
  * @author andres.marcelo
  */
-public class DigitsThread implements Runnable{
+public class DigitsThread extends Thread{
     int firstDigit;
     int lastDigit;
-    int totalDigits;
+    int position;
     byte[] rta;
     public DigitsThread(int a, int b){
         this.firstDigit=a;
         this.lastDigit=b;
+
     }
 
     @Override

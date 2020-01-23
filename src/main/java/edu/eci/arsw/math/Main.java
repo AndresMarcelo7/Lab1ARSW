@@ -14,9 +14,11 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String a[]) {
-        System.out.println(bytesToHex(PiDigits.getDigits(0, 10)));
-        System.out.println(bytesToHex(PiDigits.getDigits(0, 10, 4)));
-        System.out.println(bytesToHex(PiDigits.getDigits(1, 100)));
+        long startTime= System.currentTimeMillis();
+        System.out.println(bytesToHex(PiDigits.getDigits(0, 100000,100)));
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime-startTime);
+
         //System.out.println(bytesToHex(PiDigits.getDigits(1, 1000000)));
     }
 
