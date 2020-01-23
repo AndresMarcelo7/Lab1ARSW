@@ -12,10 +12,16 @@ package edu.eci.arsw.threads;
 public class CountThread implements Runnable{
     int start;
     int end;
+    /**
+     * Constructor CountThread 
+     * @param start inicio del intervalo
+     * @param end   fin del intervalo
+     */
     public CountThread(int start, int end){
         this.start=start;
         this.end=end;
     }
+    
     public int getStart() {
         return start;
     }
@@ -30,9 +36,9 @@ public class CountThread implements Runnable{
     public void setEnd(int end) {
         this.end = end;
     }
+    
     @Override
     public void run() {
-        
         for (int i=start; i<=end;i++){
             System.out.println(i);
         }

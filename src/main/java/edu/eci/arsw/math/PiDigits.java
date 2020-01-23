@@ -43,9 +43,23 @@ public class PiDigits {
             sum = 16 * (sum - Math.floor(sum));
             digits[i] = (byte) sum;
         }
-
+  
         return digits;
     }
+    
+     public static byte[] getDigits(int start, int count, int N){
+        int saltos = Math.floorDiv(count,N);
+        int sobrante = count % N;
+        int aux = start;
+        int aux2 = saltos;
+        for (int i =0; i<N ; i++){
+            new Thread(new DigitsThread(aux,aux2)).start();
+            aux += saltos+1;
+            aux2 += (i==N-1) ? (saltos+sobrante): saltos;
+        }
+        
+     }
+     
 
     /// <summary>
     /// Returns the sum of 16^(n - k)/(8 * k + m) from 0 to k.
