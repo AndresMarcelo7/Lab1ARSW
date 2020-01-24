@@ -15,9 +15,9 @@ Abra la consola y situese en donde descargo el programa, deberia quedarle algo a
 ``mvn exec:java -Dexec.mainClass="edu.eci.arsw.math.Main
 ``
 A continuacion poner los parametros (cifra de inicio, numero de cifras y numero de hilos respectivamente) separados por lineas, de la siguiente forma:
-> 0 
-> 100
-> 20
+> 0  
+> 100  
+> 20  
 
 
 # Part I - Introduction to Java Threads
