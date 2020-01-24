@@ -14,8 +14,9 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String a[]) {
+        int cores = Runtime.getRuntime().availableProcessors();
         long startTime= System.currentTimeMillis();
-        System.out.println(bytesToHex(PiDigits.getDigits(0, 100000,50)));
+        System.out.println(bytesToHex(PiDigits.getDigits(0, 1000000,cores)));
         long endTime = System.currentTimeMillis();
         System.out.println(endTime-startTime);
 
