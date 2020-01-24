@@ -29,19 +29,23 @@ How does the output change if we use Run() or if we user Start() ? Why?
 Single thread. 
 
 ![1 th](img/VERDADERO.PNG)
-
+![1 thi](img/GG1.PNG)
 
 As many threads as processing cores (have the program determine this using the Runtime API). 
 
 ![4 th](img/VERDADERO2.PNG)
-
+![4 thi](img/GG2.PNG)
 So many threads as double processing cores. 
 
 ![8 th](img/VERDADERO3.PNG)
-
+![8 thi](img/GG3.PNG)
 
 200 threads
 
 ![200 th](img/VERDADERO4.PNG)
+![200 thi](img/GG4.PNG)
 
+500 threads
 
+![500 th](img/g5.PNG)
+![500 thi](img/GG5.PNG)
