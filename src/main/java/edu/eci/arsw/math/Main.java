@@ -6,6 +6,7 @@
 package edu.eci.arsw.math;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  *
@@ -14,11 +15,16 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String a[]) {
-        int cores = Runtime.getRuntime().availableProcessors();
+        Scanner scan = new Scanner(System.in);
+        int st = Integer.parseInt(scan.next());
+        int  ct = Integer.parseInt(scan.next());
+        int  hl = Integer.parseInt(scan.next());
         long startTime= System.currentTimeMillis();
-        System.out.println(bytesToHex(PiDigits.getDigits(0, 1000000,cores)));
+        System.out.println(bytesToHex(PiDigits.getDigits(st,ct,hl)));
         long endTime = System.currentTimeMillis();
-        System.out.println(endTime-startTime);
+        scan.close();
+        System.out.println("Tiempo de ejecucion en ms " + (endTime-startTime));
+
 
         //System.out.println(bytesToHex(PiDigits.getDigits(1, 1000000)));
     }
