@@ -49,3 +49,23 @@ So many threads as double processing cores.
 
 ![500 th](img/g5.PNG)
 ![500 thi](img/GG5.PNG)
+
+
+ ## Why is the best performance not achieved with the 500 threads?
+ 
+ Esto se debe a que el procesador en uso no soporta la cantidad de hilos necesitados para el proceso.
+ 
+ ## How does this performance compare when 200 are used?
+ El proceso se ejecuta de manera más óptima debido a que esta cantidad de Threads es soportada por el procesador.
+ 
+ ## How does the solution behave using as many processing threads as cores compared to the result of using twice as much?
+ 
+ El uso de la CPU es menor en el caso en el que usamos el doble de Threads con respecto al numero de cores del pc.
+ Sin embargo, la solucion con el doble de Threads es más efectiva, debido a que cada core soporta 2 hilos al tiempo.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
