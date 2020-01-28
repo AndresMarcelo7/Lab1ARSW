@@ -36,22 +36,23 @@ public class PrimeFinderThread extends Thread{
                 
 	}
 
-	public synchronized void run(){
+	public void run(){
                 long startTime= System.currentTimeMillis();
                 boolean flag =false;
 		for (int i=a;i<=b;i++){	
-                        
-                        while (isSuspender()){
-                            try {
-                                wait();
-                                System.out.println("prueba");
-                            } catch (InterruptedException ex) {
-                                Logger.getLogger(PrimeFinderThread.class.getName()).log(Level.SEVERE, null, ex);
+                        synchronized(this){
+                            while (isSuspender()){
+                                try {
+                                    wait();                                
+                                } catch (InterruptedException ex) {
+                                    Logger.getLogger(PrimeFinderThread.class.getName()).log(Level.SEVERE, null, ex);
+                                }
                             }
                         }
+
 			if (isPrime(i)){                            
 				primes.add(i);
-				System.out.println(i);
+				//System.out.println(i);
                                 this.veces+=1;
 			}                        
 		}
