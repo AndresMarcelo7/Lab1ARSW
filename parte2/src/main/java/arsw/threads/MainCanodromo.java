@@ -77,7 +77,6 @@ public class MainCanodromo {
                         System.out.println("Carrera pausada!");
                         for (int i = 0; i < can.getNumCarriles(); i++) {
                             galgos[i].detengase();
-
                         }
                     }
                 }
@@ -90,7 +89,6 @@ public class MainCanodromo {
                         System.out.println("Carrera reanudada!");
                         for (int i = 0; i < can.getNumCarriles(); i++) {
                             galgos[i].alistese();
-
                         }
                     }
                 }
