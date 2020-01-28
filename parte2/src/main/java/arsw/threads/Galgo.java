@@ -1,5 +1,6 @@
 package arsw.threads;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -29,8 +30,8 @@ public class Galgo extends Thread {
 			
 			if (paso == carril.size()) {						
 				carril.finish();
-				int ubicacion=regl.getUltimaPosicionAlcanzada();
-				regl.setUltimaPosicionAlcanzada(ubicacion+1);
+				int ubicacion=regl.getAndIncrement();
+
 				System.out.println("El galgo "+this.getName()+" llego en la posicion "+ubicacion);
 				if (ubicacion==1){
 					regl.setGanador(this.getName());
