@@ -21,6 +21,7 @@ public class Main {
                 }
                 while(true){
                     int v=0;
+                    boolean flag = true;
                     if (System.currentTimeMillis() - startTime >= 5000){
                         for (PrimeFinderThread hilo:hilos){
                             hilo.setSuspender(true);
@@ -30,11 +31,21 @@ public class Main {
                         System.out.println("Presione enter para continuar...");
                         Scanner entrada = new Scanner(System.in);
                         entrada.nextLine();
-                        entrada.close();
                         for (PrimeFinderThread hilo:hilos){
                             hilo.despertar();
-                        }  
-                        break;
+                        }
+                        startTime= System.currentTimeMillis();
+                        for (PrimeFinderThread hilo:hilos){
+                            if (hilo.isAlive()){
+                                flag = false;
+                                break;
+                            }
+                        }
+                        if (flag){
+                            break;
+
+
+                        }
                     }
                 }
 		
