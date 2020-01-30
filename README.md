@@ -1,4 +1,4 @@
-# Laboratorio 2 ARSW
+# Laboratorio 1 ARSW
 ## Integrantes:
 - Andres Marcelo 
 - Johan Arias
