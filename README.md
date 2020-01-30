@@ -4,10 +4,10 @@
 - Johan Arias
 - Simon Marin
 - Juan Garcia
-# Como ejecutar el programa?
+# Como ejecutar el programa (Parte 1 PI Digits)?
 Primero que todo asegurese de tener Maven instalado en su equipo y tenerlo en el path de su S.O
 
-Abra la consola y situese en donde descargo el programa, deberia quedarle algo asi el path: ``C:\Users\UExample\Downloads\Lab2ARSW>``
+Abra la consola y situese en donde descargo el programa, deberia quedarle algo asi el path: ``C:\Users\UExample\Downloads\Lab2ARSW\pi>``
 
 - Para compilar el proyecto ponga el siguiente comando: ``mvn compile``
 - Para ejecutar las pruebas ponga el siguiente comando: `` mvn test``
@@ -62,6 +62,26 @@ So many threads as double processing cores.
  
  El uso de la CPU es menor en el caso en el que usamos el doble de Threads con respecto al numero de cores del pc.
  Sin embargo, la solucion con el doble de Threads es más efectiva, debido a que cada core soporta 2 hilos al tiempo.
+ 
+ # Como ejecutar el programa (Parte 2   I PrimeNumbers Digits)?
+Primero que todo asegurese de tener Maven instalado en su equipo y tenerlo en el path de su S.O
+
+Abra la consola y situese en donde descargo el programa, deberia quedarle algo asi el path: ``C:\Users\UExample\Downloads\Lab2ARSW\parte1>``
+- Para compilar el proyecto ponga el siguiente comando: ``mvn compile``
+- Para probar el programa usted mismo  ponga el siguiente comando:
+``mvn exec:java -Dexec.mainClass="edu.eci.arsw.primefinder.Main"
+``
+
+ # Como ejecutar el programa (Parte 2  II Canodromo)?
+Primero que todo asegurese de tener Maven instalado en su equipo y tenerlo en el path de su S.O
+
+Abra la consola y situese en donde descargo el programa, deberia quedarle algo asi el path: ``C:\Users\UExample\Downloads\Lab2ARSW\parte2>``
+
+- Para compilar el proyecto ponga el siguiente comando: ``mvn compile``
+- Para probar el programa usted mismo y poner casos ponga el siguiente comando:
+``mvn exec:java -Dexec.mainClass="arsw.threads.MainCanodromo"
+``
+ 
  
  
  
